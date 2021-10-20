@@ -16,142 +16,151 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>MISSISSAUGA, ON</h1>
-        <h2>monday @ 3:58PM</h2>
-        <div class="row">
-          <div class="col-7">
-            <body>
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="mostly sunny"
-              />
-              <span class="current-temperature">23</span> °C | °F
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <h1>MISSISSAUGA, ON</h1>
+          <h2>monday @ 3:58PM</h2>
+          <div class="row">
+            <div class="col-7">
+              <div class="clearfix current-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="mostly sunny"
+                  class="float-left"
+                />
+                <span>
+                  <strong>23</strong>
+                  <span class="units"
+                    >°C | <a class="plain" href="#">°F</a></span
+                  >
+                </span>
+              </div>
               <div class="current-weather-description">mostly sunny</div>
-            </body>
-            <hr />
-            <div class="row hourly-forecast">
-              <div class="col-3">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt=""
-                />
-                5PM
-              </div>
-              <div class="col-3">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt=""
-                />
-                6PM
-              </div>
-              <div class="col-3">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt=""
-                />
-                7PM
-              </div>
-              <div class="col-3">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                  alt=""
-                />
-                8PM
-              </div>
-            </div>
-            <hr />
-            <div class="row sun-position">
-              <div class="col-6">
-                <ul>
-                  <li>
-                    sunrise
-                    <img
-                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                      alt=""
-                    />
-                    6:59AM
-                  </li>
-                </ul>
-              </div>
-              <div class="col-6">
-                <ul>
-                  <li>
-                    sunset
-                    <img
-                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                      alt=""
-                    />
-                    7:34PM
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col">
-                <ul>
-                  <li>Precipitation: 1%</li>
-                  <li>Humidity: 43%</li>
-                  <li>Wind: 21 km/h</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-5">
-            <div class="five-forecast">
-              <ul>
-                <li class="forecast-info">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt=""
-                  />
-                  <span class="max-temperature">23°</span>
-                  <span class="min-temperature">19°</span>
-                  <div class="forecast-day">monday</div>
-                </li>
-                <hr class="forecast-division" />
-                <li class="forecast-info">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt=""
-                  />
-                  <span class="max-temperature">23°</span>
-                  <span class="min-temperature">19°</span>
-                  <div class="forecast-day">tuesday</div>
-                </li>
-                <hr class="forecast-division" />
-                <li class="forecast-info">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt=""
-                  />
-                  <span class="max-temperature">23°</span>
-                  <span class="min-temperature">19°</span>
-                  <div class="forecast-day">wednesday</div>
-                </li>
-                <hr class="forecast-division" />
-                <li class="forecast-info">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt=""
-                  />
-                  <span class="max-temperature">23°</span>
-                  <span class="min-temperature">19°</span>
-                  <div class="forecast-day">thursday</div>
-                </li>
-                <hr class="forecast-division" />
-                <li class="forecast-info">
-                  <img
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                    alt=""
-                  />
 
-                  <span class="max-temperature">23°</span>
-                  <span class="min-temperature">19°</span>
-                  <div class="forecast-day">friday</div>
-                </li>
-              </ul>
+              <hr class="current-division" />
+              <div class="row hourly-forecast">
+                <div class="col-3">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt=""
+                  />
+                  5PM
+                </div>
+                <div class="col-3">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt=""
+                  />
+                  6PM
+                </div>
+                <div class="col-3">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt=""
+                  />
+                  7PM
+                </div>
+                <div class="col-3">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    alt=""
+                  />
+                  8PM
+                </div>
+              </div>
+              <hr class="current-division" />
+              <div class="row sun-position">
+                <div class="col-6">
+                  <ul>
+                    <li>
+                      sunrise
+                      <img
+                        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                        alt=""
+                      />
+                      <strong>6:59AM</strong>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul>
+                    <li>
+                      sunset
+                      <img
+                        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                        alt=""
+                      />
+                      <strong>7:34PM</strong>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <hr class="current-division" />
+              <div class="row">
+                <div class="col">
+                  <ul class="additional-weather">
+                    <li>Precipitation: 1%</li>
+                    <li>Humidity: 43%</li>
+                    <li>Wind: 21 km/h</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="five-day-forecast">
+                <ul>
+                  <li class="forecast-info">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt=""
+                    />
+                    <span class="max-temperature">23°</span>
+                    <span class="min-temperature">19°</span>
+                    <div class="forecast-day">monday</div>
+                  </li>
+                  <hr class="forecast-division" />
+                  <li class="forecast-info">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt=""
+                    />
+                    <span class="max-temperature">23°</span>
+                    <span class="min-temperature">19°</span>
+                    <div class="forecast-day">tuesday</div>
+                  </li>
+                  <hr class="forecast-division" />
+                  <li class="forecast-info">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt=""
+                    />
+                    <span class="max-temperature">23°</span>
+                    <span class="min-temperature">19°</span>
+                    <div class="forecast-day">wednesday</div>
+                  </li>
+                  <hr class="forecast-division" />
+                  <li class="forecast-info">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt=""
+                    />
+                    <span class="max-temperature">23°</span>
+                    <span class="min-temperature">19°</span>
+                    <div class="forecast-day">thursday</div>
+                  </li>
+                  <hr class="forecast-division" />
+                  <li class="forecast-info">
+                    <img
+                      src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                      alt=""
+                    />
+
+                    <span class="max-temperature">23°</span>
+                    <span class="min-temperature">19°</span>
+                    <div class="forecast-day">friday</div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -159,9 +168,11 @@
           <a
             href="https://github.com/cbell-smythe/my-weather-app"
             target="_blank"
+            class="plain"
           >
             Open-source code</a
-          >, by Chrystal Bell-Smythe
+          >
+          by Chrystal Bell-Smythe
         </footer>
       </div>
     </div>

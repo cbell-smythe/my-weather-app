@@ -1,17 +1,10 @@
-.weather-app {
-  max-width: 500px;
-  margin: 100px auto;
-  padding: 20px;
-  border: 1px solid grey;
-  border-radius: 10px;
-}
 h1 {
   color: mediumslateblue;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
 }
 h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 10px;
   margin-bottom: 30px;
@@ -25,25 +18,78 @@ li {
   font-weight: 400;
   line-height: 25px;
 }
-.current-temperature {
-  font-size: 40px;
-  font-weight: bold;
-  margin: 5px;
+.weather-app-wrapper {
+  max-width: 500px;
+  margin: 100px auto;
+}
+.weather-app {
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.current-temperature img {
+  margin-left: 10px;
+  margin-right: 30px;
+  float: left;
+  height: 70px;
+  width: 70px;
+}
+.current-temperature strong {
+  font-size: 50px;
+  margin: 1px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.current-temperature .units {
+  position: relative;
+  font-size: 15px;
+  top: -30px;
+}
+.current-temperature .plain {
+  text-decoration: none;
 }
 .current-weather-description {
   font-weight: 500;
   text-align: center;
 }
+.current-division {
+  margin: 10px;
+  padding: 0;
+}
 .hourly-forecast {
   text-align: center;
+  font-size: 13px;
+  color: #5a6275;
+}
+.hourly-forecast img {
+  height: 35px;
+  width: 35px;
 }
 .sun-position {
   text-align: center;
+  font-size: 15px;
+  color: #5a6275;
 }
-.five-forecast {
+.sun-position img {
+  margin: 5px;
+  height: 40px;
+  weight: 40px;
+}
+.additional-weather {
+  padding: 12px;
+  text-align: left;
+  color: #5a6275;
+  font-size: 18px;
+}
+.five-day-forecast {
   border: 1px solid grey;
   border-radius: 10px;
   padding: 8px;
+}
+.five-day-forecast img {
+  height: 50px;
+  weight: 50px;
 }
 .forecast-division {
   text-align: center;
@@ -54,6 +100,8 @@ li {
   text-align: center;
   font-size: 15px;
   font-weight: 500;
+  color: #5a6275;
+  margin: 2px;
 }
 .forecast-info {
   margin: 0;
@@ -66,10 +114,13 @@ li {
   font-weight: bold;
 }
 .min-temperature {
-  color: grey;
+  color: #5a6275;
 }
 .footnote {
   font-size: 13px;
   text-align: center;
   margin-top: 15px;
+}
+.footnote .plain {
+  text-decoration: none;
 }
