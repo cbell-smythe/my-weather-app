@@ -36,6 +36,11 @@ li {
   height: 70px;
   width: 70px;
 }
+.current-temperature .active {
+  color: black;
+  cursor: default;
+}
+
 .current-temperature strong {
   font-size: 50px;
   margin: 1px;
