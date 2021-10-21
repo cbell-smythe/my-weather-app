@@ -22,7 +22,6 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
   let cityElement = document.querySelector("#city");
   let dateElement = document.querySelector("#date");
   let temperatureElement = document.querySelector("#current-temperature");
@@ -45,5 +44,4 @@ function displayTemperature(response) {
 let apiKey = "1a6432c5ca7b6f9b0bee45c98d54ea71";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
 
-console.log(apiUrl);
 axios.get(`${apiUrl}`).then(displayTemperature);
