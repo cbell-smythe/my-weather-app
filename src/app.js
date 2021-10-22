@@ -1,13 +1,11 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+  let hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+  let amPm = date.getHours() >= 12 ? "PM" : "AM";
+
+  let minutes =
+    date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+
   let days = [
     "sunday",
     "monday",
@@ -18,30 +16,34 @@ function formatDate(timestamp) {
     "saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes} ${amPm}`;
 }
 
 function displayTemperature(response) {
+  console.log(response);
   let cityElement = document.querySelector("#city");
   let dateElement = document.querySelector("#date");
   let temperatureElement = document.querySelector("#current-temperature");
   let descriptionElement = document.querySelector(
     "#current-weather-description"
   );
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
   let feelslikeElement = document.querySelector("#feels-like-temperature");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
-
   cityElement.innerHTML = response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description;
+  sunriseElement.innerHTML = sunPosition(response.data.sys.sunrise * 1000);
+  sunsetElement.innerHTML = sunPosition(response.data.sys.sunset * 1000);
   feelslikeElement.innerHTML = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -78,6 +80,21 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function sunPosition(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours > 12) {
+    hours = date.getHours() - 12;
+  }
+  let amPm = date.getHours() >= 12 ? "PM" : "AM";
+
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes} ${amPm}`;
+}
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");

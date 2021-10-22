@@ -28,6 +28,7 @@
                   class="form-control"
                   id="city-input"
                   autocomplete="off"
+                  autofocus="on"
                 />
               </div>
               <div class="col-3">
@@ -101,7 +102,7 @@
                         src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                         alt=""
                       />
-                      <strong>6:59AM</strong>
+                      <strong id="sunrise">6:59AM</strong>
                     </li>
                   </ul>
                 </div>
@@ -113,7 +114,7 @@
                         src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                         alt=""
                       />
-                      <strong>7:34PM</strong>
+                      <strong id="sunset">7:34PM</strong>
                     </li>
                   </ul>
                 </div>
@@ -122,7 +123,6 @@
               <div class="row">
                 <div class="col">
                   <ul class="additional-weather">
-                    <li>Precipitation: <span id="precipitation"></span>%</li>
                     <li>
                       Feels Like: <span id="feels-like-temperature"></span>°
                     </li>
