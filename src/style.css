@@ -1,5 +1,9 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 h1 {
-  color: mediumslateblue;
+  color: #7047a3;
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
@@ -25,10 +29,15 @@ li {
 }
 .weather-app {
   padding: 20px;
-  border: 1px solid grey;
+  border: 2px solid #7047a3;
+  opacity: 1;
   border-radius: 3px;
+  background: #c8f0f0;
 }
-
+.form-control {
+  border: 1px solid #7047a3;
+  opacity: 1;
+}
 .current-temperature img {
   margin-left: 10px;
   margin-right: 30px;
@@ -62,11 +71,14 @@ li {
 .current-division {
   margin: 10px;
   padding: 0;
+  border: 1px solid #7047a3;
+  opacity: 1;
+  background: #fff;
 }
 .hourly-forecast {
   text-align: center;
   font-size: 13px;
-  color: #5a6275;
+  color: #474748;
 }
 .hourly-forecast img {
   height: 35px;
@@ -75,7 +87,7 @@ li {
 .sun-position {
   text-align: center;
   font-size: 15px;
-  color: #5a6275;
+  color: #474748;
 }
 .sun-position img {
   margin: 5px;
@@ -85,11 +97,12 @@ li {
 .additional-weather {
   padding: 12px;
   text-align: left;
-  color: #5a6275;
+  color: #474748;
   font-size: 18px;
 }
 .five-day-forecast {
-  border: 1px solid grey;
+  border: 2px solid #7047a3;
+  opacity: 1;
   border-radius: 3px;
   padding: 8px;
 }
@@ -101,12 +114,15 @@ li {
   text-align: center;
   margin: 0;
   padding: 0;
+  border: 1px solid #7047a3;
+  opacity: 1;
+  background: #fff;
 }
 .forecast-day {
   text-align: center;
   font-size: 15px;
   font-weight: 500;
-  color: #5a6275;
+  color: #474748;
   margin: 2px;
 }
 .forecast-info {
