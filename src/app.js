@@ -19,26 +19,48 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes} ${amPm}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+  ];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#five-day-forecast");
 
   let forecastHTML = `<ul>`;
-  let days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
       <li class="forecast-info">
         <img
-        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+        src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"
         alt=""
       />
-        <span class="max-temperature">23°</span>
-        <span class="min-temperature">19°</span>
-        <div class="forecast-day">${day}</div>
+        <span class="max-temperature">${Math.round(
+          forecastDay.temp.max
+        )}°</span>
+        <span class="min-temperature">${Math.round(
+          forecastDay.temp.min
+        )}°</span>
+        <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
       </li>
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</ul>`;
