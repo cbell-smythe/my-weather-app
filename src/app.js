@@ -34,9 +34,20 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+function formatHour(timestamp) {
+  let hour = new Date(timestamp * 1000);
+  let hours = hour.getHours() > 12 ? hour.getHours() - 12 : hour.getHours();
+  let amPm = hour.getHours() >= 12 ? "PM" : "AM";
+
+  return `${hours}${amPm}`;
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
+  let forecastHour = response.data.hourly;
+
   let forecastElement = document.querySelector("#five-day-forecast");
+  let forecastHourElement = document.querySelector("#hourly-forecast");
 
   let forecastHTML = `<ul>`;
   forecast.forEach(function (forecastDay, index) {
@@ -59,16 +70,36 @@ function displayForecast(response) {
         )}°</span>
         <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
       </li>
+      <hr class="forecast-division" />
+
 `;
     }
   });
 
   forecastHTML = forecastHTML + `</ul>`;
   forecastElement.innerHTML = forecastHTML;
+
+  let forecastHourHTML = `<div class="row">`;
+  forecastHour.forEach(function (forecastHour, index) {
+    if (index < 4) {
+      forecastHourHTML =
+        forecastHourHTML +
+        `<div class="col-3">
+                  <img
+                    src="http://openweathermap.org/img/wn/${
+                      forecastHour.weather[0].icon
+                    }@2x.png"
+                    alt=""
+                  />
+                  ${formatHour(forecastHour.dt)}
+                </div>`;
+    }
+  });
+  forecastHourHTML = forecastHourHTML + `</div>`;
+  forecastHourElement.innerHTML = forecastHourHTML;
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "1a6432c5ca7b6f9b0bee45c98d54ea71";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
