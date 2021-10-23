@@ -19,6 +19,31 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes} ${amPm}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#five-day-forecast");
+
+  let forecastHTML = `<ul>`;
+  let days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <li class="forecast-info">
+        <img
+        src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+        alt=""
+      />
+        <span class="max-temperature">23°</span>
+        <span class="min-temperature">19°</span>
+        <div class="forecast-day">${day}</div>
+      </li>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</ul>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let cityElement = document.querySelector("#city");
   let dateElement = document.querySelector("#date");
