@@ -54,8 +54,7 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `
-      <li class="forecast-info">
+        `<li class="forecast-info">
         <img
         src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
