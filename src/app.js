@@ -69,7 +69,6 @@ function displayForecast(response) {
         )}°</span>
         <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
       </li>
-      <hr class="forecast-division" />
 
 `;
     }
@@ -167,4 +166,4 @@ function sunPosition(timestamp) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Paris");
+search("Toronto");

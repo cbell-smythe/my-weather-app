@@ -44,6 +44,7 @@ li {
   float: left;
   height: 70px;
   width: 70px;
+  filter: drop-shadow(2px 2px 4px grey);
 }
 .current-temperature .active {
   color: black;
@@ -58,14 +59,14 @@ li {
 }
 .current-temperature .units {
   position: relative;
-  font-size: 15px;
+  font-size: 17px;
   top: -30px;
 }
 .current-temperature .plain {
   text-decoration: none;
 }
 .current-weather-description {
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
 }
 .current-division {
@@ -78,6 +79,7 @@ li {
 .hourly-forecast {
   text-align: center;
   font-size: 13px;
+  font-weight: 600;
   color: #474748;
   margin-left: 5px;
   margin-top: 15px;
@@ -88,6 +90,7 @@ li {
   width: 45px;
   position: relative;
   left: -5px;
+  filter: drop-shadow(2px 2px 4px grey);
 }
 .sun-position {
   text-align: center;
@@ -110,25 +113,19 @@ li {
   opacity: 1;
   border-radius: 3px;
   padding: 8px;
+  margin-top: 40px;
 }
 .five-day-forecast img {
   height: 55px;
   width: 55px;
-  margin-right: px;
-}
-.forecast-division {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #7047a3;
-  opacity: 1;
-  background: #fff;
+  margin: 0 10px;
+  filter: drop-shadow(2px 2px 4px grey);
 }
 .forecast-day {
   text-align: center;
-  font-size: 15px;
-  font-weight: 500;
-  color: #474748;
+  font-size: 17px;
+  font-weight: bold;
+  color: #7047a3;
   margin: 2px;
 }
 .forecast-info {
